@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace EasySdk\Dingtalk;
 
-use EasyWeChat\Kernel\Contracts\RefreshableAccessToken;
-use EasyWeChat\Kernel\Exceptions\HttpException;
+use EasySdk\Kernel\Contracts\RefreshableAccessToken;
+use EasySdk\Kernel\Exceptions\HttpException;
 use JetBrains\PhpStorm\ArrayShape;
 use Psr\SimpleCache\CacheInterface;
 use Symfony\Component\Cache\Adapter\FilesystemAdapter;
@@ -43,7 +43,7 @@ class AccessToken implements RefreshableAccessToken
 
     /**
      * @return string
-     * @throws \EasyWeChat\Kernel\Exceptions\HttpException
+     * @throws \EasySdk\Kernel\Exceptions\HttpException
      * @throws \Psr\SimpleCache\InvalidArgumentException
      * @throws \Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface
      * @throws \Symfony\Contracts\HttpClient\Exception\DecodingExceptionInterface
@@ -65,7 +65,7 @@ class AccessToken implements RefreshableAccessToken
 
     /**
      * @return array<string, string>
-     * @throws \EasyWeChat\Kernel\Exceptions\HttpException
+     * @throws \EasySdk\Kernel\Exceptions\HttpException
      * @throws \Psr\SimpleCache\InvalidArgumentException
      * @throws \Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface
      * @throws \Symfony\Contracts\HttpClient\Exception\DecodingExceptionInterface
@@ -81,7 +81,7 @@ class AccessToken implements RefreshableAccessToken
 
     /**
      * @return array<string, string>
-     * @throws \EasyWeChat\Kernel\Exceptions\HttpException
+     * @throws \EasySdk\Kernel\Exceptions\HttpException
      * @throws \Psr\SimpleCache\InvalidArgumentException
      * @throws \Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface
      * @throws \Symfony\Contracts\HttpClient\Exception\DecodingExceptionInterface
@@ -96,7 +96,7 @@ class AccessToken implements RefreshableAccessToken
     }
 
     /**
-     * @throws \EasyWeChat\Kernel\Exceptions\HttpException
+     * @throws \EasySdk\Kernel\Exceptions\HttpException
      * @throws \Psr\SimpleCache\InvalidArgumentException
      * @throws \Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface
      * @throws \Symfony\Contracts\HttpClient\Exception\DecodingExceptionInterface

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace EasySdk\Dingtalk;
 
-use EasyWeChat\Kernel\Exceptions\HttpException;
+use EasySdk\Kernel\Exceptions\HttpException;
 use JetBrains\PhpStorm\ArrayShape;
 use Psr\SimpleCache\CacheInterface;
 use Symfony\Component\Cache\Adapter\FilesystemAdapter;
@@ -33,7 +33,7 @@ class JsApiTicket
      * @throws \Symfony\Contracts\HttpClient\Exception\DecodingExceptionInterface
      * @throws \Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface
      * @throws \Psr\SimpleCache\InvalidArgumentException
-     * @throws \EasyWeChat\Kernel\Exceptions\HttpException
+     * @throws \EasySdk\Kernel\Exceptions\HttpException
      * @throws \Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface
      * @throws \Symfony\Contracts\HttpClient\Exception\ServerExceptionInterface
      */
@@ -66,7 +66,7 @@ class JsApiTicket
      * @throws \Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface
      * @throws \Psr\SimpleCache\InvalidArgumentException
      * @throws \Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface
-     * @throws \EasyWeChat\Kernel\Exceptions\HttpException
+     * @throws \EasySdk\Kernel\Exceptions\HttpException
      * @throws \Symfony\Contracts\HttpClient\Exception\ServerExceptionInterface
      */
     public function getTicket(): string
@@ -109,7 +109,7 @@ class JsApiTicket
      * @throws \Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface
      * @throws \Psr\SimpleCache\InvalidArgumentException
      * @throws \Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface
-     * @throws \EasyWeChat\Kernel\Exceptions\HttpException
+     * @throws \EasySdk\Kernel\Exceptions\HttpException
      * @throws \Symfony\Contracts\HttpClient\Exception\ServerExceptionInterface
      */
     #[ArrayShape([
@@ -137,7 +137,7 @@ class JsApiTicket
      * @throws \Symfony\Contracts\HttpClient\Exception\DecodingExceptionInterface
      * @throws \Psr\SimpleCache\InvalidArgumentException
      * @throws \Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface
-     * @throws \EasyWeChat\Kernel\Exceptions\HttpException
+     * @throws \EasySdk\Kernel\Exceptions\HttpException
      * @throws \Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface
      * @throws \Symfony\Contracts\HttpClient\Exception\ServerExceptionInterface
      */

@@ -8,9 +8,6 @@
             "email": "jiangsili@qq.com"
         }
     ],
-    "require": {
-        "w7corp/easywechat": "^6.4.0"
-    },
     "scripts": {
         "check-style": "php-cs-fixer fix --using-cache=no --diff --dry-run --allow-risky=yes --ansi",
         "fix-style": "php-cs-fixer fix --using-cache=no --allow-risky=yes --ansi"
@@ -22,5 +19,25 @@
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.8"
+    },
+    "require": {
+        "php": ">=8.0.2",
+        "ext-fileinfo": "*",
+        "ext-openssl": "*",
+        "ext-simplexml": "*",
+        "ext-sodium": "*",
+        "ext-libxml": "*",
+        "ext-curl": "*",
+        "monolog/monolog": "^2.2",
+        "nyholm/psr7": "^1.5",
+        "nyholm/psr7-server": "^1.0",
+        "psr/simple-cache": "^1.0|^2.0|^3.0",
+        "psr/http-client": "^1.0",
+        "symfony/cache": "^5.4|^6.0",
+        "symfony/http-foundation": "^5.4|^6.0",
+        "symfony/psr-http-message-bridge": "^2.1.2",
+        "symfony/http-client": "^5.4|^6.0",
+        "symfony/mime": "^5.4|^6.0",
+        "symfony/polyfill-php81": "^1.25"
     }
 }

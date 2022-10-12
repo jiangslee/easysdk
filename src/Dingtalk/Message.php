@@ -10,7 +10,7 @@ namespace EasySdk\Dingtalk;
  * @property string $MsgType
  * @property string $ChangeType
  */
-class Message extends \EasyWeChat\Kernel\Message
+class Message extends \EasySdk\Kernel\Message
 {
     //
 }

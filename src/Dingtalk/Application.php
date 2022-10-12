@@ -6,15 +6,15 @@ namespace EasySdk\Dingtalk;
 
 use EasySdk\Dingtalk\Contracts\Account as AccountInterface;
 use EasySdk\Dingtalk\Contracts\Application as ApplicationInterface;
-use EasyWeChat\Kernel\Contracts\AccessToken as AccessTokenInterface;
-use EasyWeChat\Kernel\Contracts\Server as ServerInterface;
-use EasyWeChat\Kernel\HttpClient\AccessTokenAwareClient;
-use EasyWeChat\Kernel\HttpClient\Response;
-use EasyWeChat\Kernel\Traits\InteractWithCache;
-use EasyWeChat\Kernel\Traits\InteractWithClient;
-use EasyWeChat\Kernel\Traits\InteractWithConfig;
-use EasyWeChat\Kernel\Traits\InteractWithHttpClient;
-use EasyWeChat\Kernel\Traits\InteractWithServerRequest;
+use EasySdk\Kernel\Contracts\AccessToken as AccessTokenInterface;
+use EasySdk\Kernel\Contracts\Server as ServerInterface;
+use EasySdk\Kernel\HttpClient\AccessTokenAwareClient;
+use EasySdk\Kernel\HttpClient\Response;
+use EasySdk\Kernel\Traits\InteractWithCache;
+use EasySdk\Kernel\Traits\InteractWithClient;
+use EasySdk\Kernel\Traits\InteractWithConfig;
+use EasySdk\Kernel\Traits\InteractWithHttpClient;
+use EasySdk\Kernel\Traits\InteractWithServerRequest;
 use Overtrue\Socialite\Contracts\ProviderInterface as SocialiteProviderInterface;
 use Overtrue\Socialite\Providers\WeWork;
 
@@ -76,7 +76,7 @@ class Application implements ApplicationInterface
 
     /**
      * @throws \ReflectionException
-     * @throws \EasyWeChat\Kernel\Exceptions\InvalidArgumentException
+     * @throws \EasySdk\Kernel\Exceptions\InvalidArgumentException
      * @throws \Throwable
      */
     public function getServer(): Server|ServerInterface

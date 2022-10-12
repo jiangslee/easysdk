@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace EasySdk\Dingtalk\Contracts;
 
-use EasyWeChat\Kernel\Contracts\AccessToken;
-use EasyWeChat\Kernel\Contracts\Config;
-use EasyWeChat\Kernel\Contracts\Server;
-use EasyWeChat\Kernel\Encryptor;
-use EasyWeChat\Kernel\HttpClient\AccessTokenAwareClient;
+use EasySdk\Kernel\Contracts\AccessToken;
+use EasySdk\Kernel\Contracts\Config;
+use EasySdk\Kernel\Contracts\Server;
+use EasySdk\Kernel\Encryptor;
+use EasySdk\Kernel\HttpClient\AccessTokenAwareClient;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\SimpleCache\CacheInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;

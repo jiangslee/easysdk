@@ -2,7 +2,7 @@
 
 namespace EasySdk\Dingtalk;
 
-use EasyWeChat\Kernel\Support\Str;
+use EasySdk\Kernel\Support\Str;
 
 class Utils
 {
@@ -21,7 +21,7 @@ class Utils
      * @throws \Psr\SimpleCache\InvalidArgumentException
      * @throws \Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface
      * @throws \Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface
-     * @throws \EasyWeChat\Kernel\Exceptions\HttpException
+     * @throws \EasySdk\Kernel\Exceptions\HttpException
      * @throws \Symfony\Contracts\HttpClient\Exception\ServerExceptionInterface
      * @throws \Exception
      */
@@ -49,7 +49,7 @@ class Utils
      * @throws \Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface
      * @throws \Psr\SimpleCache\InvalidArgumentException
      * @throws \Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface
-     * @throws \EasyWeChat\Kernel\Exceptions\HttpException
+     * @throws \EasySdk\Kernel\Exceptions\HttpException
      * @throws \Symfony\Contracts\HttpClient\Exception\ServerExceptionInterface
      * @throws \Exception
      */

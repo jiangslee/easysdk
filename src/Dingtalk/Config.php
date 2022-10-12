@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace EasySdk\Dingtalk;
 
-class Config extends \EasyWeChat\Kernel\Config
+class Config extends \EasySdk\Kernel\Config
 {
     /**
      * @var array<string>

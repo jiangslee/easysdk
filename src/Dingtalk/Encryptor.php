@@ -3,11 +3,11 @@
 namespace EasySdk\Dingtalk;
 
 use JetBrains\PhpStorm\Pure;
-use EasyWeChat\Kernel\Support\Pkcs7;
-use EasyWeChat\Kernel\Support\Str;
-use EasyWeChat\Kernel\Exceptions\RuntimeException;
+use EasySdk\Kernel\Support\Pkcs7;
+use EasySdk\Kernel\Support\Str;
+use EasySdk\Kernel\Exceptions\RuntimeException;
 
-class Encryptor extends \EasyWeChat\Kernel\Encryptor
+class Encryptor extends \EasySdk\Kernel\Encryptor
 {
     #[Pure]
     public function __construct(string $appKey, string $token, string $aesKey)
@@ -17,7 +17,7 @@ class Encryptor extends \EasyWeChat\Kernel\Encryptor
 
 
     /**
-     * @throws \EasyWeChat\Kernel\Exceptions\RuntimeException
+     * @throws \EasySdk\Kernel\Exceptions\RuntimeException
      * @throws \Exception
      */
     public function encrypt(string $plaintext, string | null $nonce = null, int | string $timestamp = null): string

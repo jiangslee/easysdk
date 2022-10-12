@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace EasySdk\Dingtalk;
 
-use EasyWeChat\Kernel\Contracts\Server as ServerInterface;
-use EasyWeChat\Kernel\HttpClient\RequestUtil;
-use EasyWeChat\Kernel\ServerResponse;
-use EasyWeChat\Kernel\Traits\DecryptXmlMessage;
-use EasyWeChat\Kernel\Traits\InteractWithHandlers;
-use EasyWeChat\Kernel\Traits\RespondXmlMessage;
-use EasyWeChat\Kernel\Support\Str;
+use EasySdk\Kernel\Contracts\Server as ServerInterface;
+use EasySdk\Kernel\HttpClient\RequestUtil;
+use EasySdk\Kernel\ServerResponse;
+use EasySdk\Kernel\Traits\DecryptXmlMessage;
+use EasySdk\Kernel\Traits\InteractWithHandlers;
+use EasySdk\Kernel\Traits\RespondXmlMessage;
+use EasySdk\Kernel\Support\Str;
 use Nyholm\Psr7\Response;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use EasyWeChat\Kernel\Exceptions\RuntimeException;
+use EasySdk\Kernel\Exceptions\RuntimeException;
 
 class Server implements ServerInterface
 {
@@ -35,8 +35,8 @@ class Server implements ServerInterface
     }
 
     /**
-     * @throws \EasyWeChat\Kernel\Exceptions\InvalidArgumentException
-     * @throws \EasyWeChat\Kernel\Exceptions\RuntimeException|\EasyWeChat\Kernel\Exceptions\BadRequestException|\Throwable
+     * @throws \EasySdk\Kernel\Exceptions\InvalidArgumentException
+     * @throws \EasySdk\Kernel\Exceptions\RuntimeException|\EasySdk\Kernel\Exceptions\BadRequestException|\Throwable
      */
     public function serve(): ResponseInterface
     {
@@ -61,7 +61,7 @@ class Server implements ServerInterface
     }
 
     /**
-     * @throws \EasyWeChat\Kernel\Exceptions\InvalidArgumentException
+     * @throws \EasySdk\Kernel\Exceptions\InvalidArgumentException
      */
     public function handleContactChanged(callable $handler): static
     {
@@ -73,7 +73,7 @@ class Server implements ServerInterface
     }
 
     /**
-     * @throws \EasyWeChat\Kernel\Exceptions\InvalidArgumentException
+     * @throws \EasySdk\Kernel\Exceptions\InvalidArgumentException
      */
     public function handleUserTagUpdated(callable $handler): static
     {
@@ -85,7 +85,7 @@ class Server implements ServerInterface
     }
 
     /**
-     * @throws \EasyWeChat\Kernel\Exceptions\InvalidArgumentException
+     * @throws \EasySdk\Kernel\Exceptions\InvalidArgumentException
      */
     public function handleUserCreated(callable $handler): static
     {
@@ -97,7 +97,7 @@ class Server implements ServerInterface
     }
 
     /**
-     * @throws \EasyWeChat\Kernel\Exceptions\InvalidArgumentException
+     * @throws \EasySdk\Kernel\Exceptions\InvalidArgumentException
      */
     public function handleUserUpdated(callable $handler): static
     {
@@ -109,7 +109,7 @@ class Server implements ServerInterface
     }
 
     /**
-     * @throws \EasyWeChat\Kernel\Exceptions\InvalidArgumentException
+     * @throws \EasySdk\Kernel\Exceptions\InvalidArgumentException
      */
     public function handleUserDeleted(callable $handler): static
     {
@@ -121,7 +121,7 @@ class Server implements ServerInterface
     }
 
     /**
-     * @throws \EasyWeChat\Kernel\Exceptions\InvalidArgumentException
+     * @throws \EasySdk\Kernel\Exceptions\InvalidArgumentException
      */
     public function handlePartyCreated(callable $handler): static
     {
@@ -133,7 +133,7 @@ class Server implements ServerInterface
     }
 
     /**
-     * @throws \EasyWeChat\Kernel\Exceptions\InvalidArgumentException
+     * @throws \EasySdk\Kernel\Exceptions\InvalidArgumentException
      */
     public function handlePartyUpdated(callable $handler): static
     {
@@ -145,7 +145,7 @@ class Server implements ServerInterface
     }
 
     /**
-     * @throws \EasyWeChat\Kernel\Exceptions\InvalidArgumentException
+     * @throws \EasySdk\Kernel\Exceptions\InvalidArgumentException
      */
     public function handlePartyDeleted(callable $handler): static
     {
@@ -157,7 +157,7 @@ class Server implements ServerInterface
     }
 
     /**
-     * @throws \EasyWeChat\Kernel\Exceptions\InvalidArgumentException
+     * @throws \EasySdk\Kernel\Exceptions\InvalidArgumentException
      */
     public function handleBatchJobsFinished(callable $handler): static
     {
@@ -231,10 +231,10 @@ class Server implements ServerInterface
         };
     }
     /**
-     * @throws \EasyWeChat\Kernel\Exceptions\InvalidArgumentException
-     * @throws \EasyWeChat\Kernel\Exceptions\RuntimeException
+     * @throws \EasySdk\Kernel\Exceptions\InvalidArgumentException
+     * @throws \EasySdk\Kernel\Exceptions\RuntimeException
      */
-    public function getRequestMessage(?ServerRequestInterface $request = null): \EasyWeChat\Kernel\Message
+    public function getRequestMessage(?ServerRequestInterface $request = null): \EasySdk\Kernel\Message
     {
         $query = $this->request->getQueryParams();
         $originContent = (string)($request ?? $this->request)->getBody();
