@@ -16,7 +16,8 @@ use EasySdk\Kernel\Traits\InteractWithConfig;
 use EasySdk\Kernel\Traits\InteractWithHttpClient;
 use EasySdk\Kernel\Traits\InteractWithServerRequest;
 use Overtrue\Socialite\Contracts\ProviderInterface as SocialiteProviderInterface;
-use Overtrue\Socialite\Providers\WeWork;
+use Overtrue\Socialite\Providers\DingTalk;
+use JetBrains\PhpStorm\Pure;
 
 class Application implements ApplicationInterface
 {
@@ -131,14 +132,14 @@ class Application implements ApplicationInterface
 
     public function getOAuth(): SocialiteProviderInterface
     {
-        return (new WeWork(
+        return (new DingTalk(
             [
                 'client_id' => $this->getAccount()->getAppKey(),
                 'client_secret' => $this->getAccount()->getSecret(),
                 'redirect_url' => $this->config->get('oauth.redirect_url'),
             ]
         ))->withApiAccessToken($this->getAccessToken()->getToken())
-            ->scopes((array) $this->config->get('oauth.scopes', ['snsapi_base']));
+            ->scopes((array) $this->config->get('oauth.scopes', ['snsapi_login']));
     }
 
     public function getTicket(): JsApiTicket
@@ -170,5 +171,11 @@ class Application implements ApplicationInterface
             ['base_uri' => 'https://oapi.dingtalk.com/',],
             (array)$this->config->get('http', [])
         );
+    }
+
+    #[Pure]
+    public function getUtils(): Utils
+    {
+        return new Utils($this);
     }
 }

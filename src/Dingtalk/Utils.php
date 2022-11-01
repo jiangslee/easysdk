@@ -37,32 +37,4 @@ class Utils
             $this->app->getTicket()->createConfigSignature($url, Str::random(), \time())
         );
     }
-
-    /**
-     * @param  array<string>  $jsApiList
-     * @param  array<string>  $openTagList
-     *
-     * @return array<string, mixed>
-     *
-     * @throws \Symfony\Contracts\HttpClient\Exception\RedirectionExceptionInterface
-     * @throws \Symfony\Contracts\HttpClient\Exception\DecodingExceptionInterface
-     * @throws \Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface
-     * @throws \Psr\SimpleCache\InvalidArgumentException
-     * @throws \Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface
-     * @throws \EasySdk\Kernel\Exceptions\HttpException
-     * @throws \Symfony\Contracts\HttpClient\Exception\ServerExceptionInterface
-     * @throws \Exception
-     */
-    public function buildJsSdkAgentConfig(
-        int $agentId,
-        string $url,
-        array $jsApiList,
-        array $openTagList = [],
-        bool $debug = false
-    ): array {
-        return array_merge(
-            compact('jsApiList', 'openTagList', 'debug'),
-            $this->app->getTicket()->createAgentConfigSignature($agentId, $url, Str::random(), \time())
-        );
-    }
 }

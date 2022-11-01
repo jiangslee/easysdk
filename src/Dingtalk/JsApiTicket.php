@@ -78,7 +78,7 @@ class JsApiTicket
             return $ticket;
         }
 
-        $response = $this->httpClient->request('GET', '/cgi-bin/get_jsapi_ticket')->toArray(false);
+        $response = $this->httpClient->request('GET', '/get_jsapi_ticket')->toArray(false);
 
         if (empty($response['ticket'])) {
             throw new HttpException('Failed to get jssdk ticket: '.json_encode($response, JSON_UNESCAPED_UNICODE));
@@ -98,72 +98,6 @@ class JsApiTicket
 
     public function getKey(): string
     {
-        return $this->key ?? $this->key = \sprintf('work.jsapi_ticket.%s', $this->appKey);
-    }
-
-    /**
-     * @return array<string, mixed>
-     *
-     * @throws \Symfony\Contracts\HttpClient\Exception\RedirectionExceptionInterface
-     * @throws \Symfony\Contracts\HttpClient\Exception\DecodingExceptionInterface
-     * @throws \Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface
-     * @throws \Psr\SimpleCache\InvalidArgumentException
-     * @throws \Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface
-     * @throws \EasySdk\Kernel\Exceptions\HttpException
-     * @throws \Symfony\Contracts\HttpClient\Exception\ServerExceptionInterface
-     */
-    #[ArrayShape([
-        'appKey' => "string",
-        'agentid' => "int",
-        'nonceStr' => "string",
-        'timestamp' => "int",
-        'url' => "string",
-        'signature' => "string"
-    ])]
-    public function createAgentConfigSignature(int $agentId, string $url, string $nonce, int $timestamp): array
-    {
-        return [
-            'appKey' => $this->appKey,
-            'agentid' => $agentId,
-            'nonceStr' => $nonce,
-            'timestamp' => $timestamp,
-            'url' => $url,
-            'signature' => $this->getTicketSignature($this->getAgentTicket($agentId), $nonce, $timestamp, $url),
-        ];
-    }
-
-    /**
-     * @throws \Symfony\Contracts\HttpClient\Exception\RedirectionExceptionInterface
-     * @throws \Symfony\Contracts\HttpClient\Exception\DecodingExceptionInterface
-     * @throws \Psr\SimpleCache\InvalidArgumentException
-     * @throws \Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface
-     * @throws \EasySdk\Kernel\Exceptions\HttpException
-     * @throws \Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface
-     * @throws \Symfony\Contracts\HttpClient\Exception\ServerExceptionInterface
-     */
-    public function getAgentTicket(int $agentId): string
-    {
-        $key = $this->getAgentKey($agentId);
-        $ticket = $this->cache->get($key);
-
-        if (!!$ticket && \is_string($ticket)) {
-            return $ticket;
-        }
-
-        $response = $this->httpClient->request('GET', '/cgi-bin/ticket/get', ['query' => ['type' => 'agent_config']])
-                                     ->toArray(false);
-
-        if (empty($response['ticket'])) {
-            throw new HttpException('Failed to get jssdk agentTicket: '.json_encode($response, JSON_UNESCAPED_UNICODE));
-        }
-
-        $this->cache->set($key, $response['ticket'], \intval($response['expires_in']));
-
-        return $response['ticket'];
-    }
-
-    public function getAgentKey(int $agentId): string
-    {
-        return $this->key ?? $this->key = \sprintf('work.jsapi_ticket.%s.%s', $this->appKey, $agentId);
+        return $this->key ?? $this->key = \sprintf('dingtalk.jsapi_ticket.%s', $this->appKey);
     }
 }
